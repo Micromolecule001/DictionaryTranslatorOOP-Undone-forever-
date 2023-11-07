@@ -44,3 +44,14 @@
     <div id="translation-output"></div>
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#translate-button").click(function () {
+            var textToTranslate = $("#translation-input").val();
+            $.post("/Controllers/UserController", { text: textToTranslate }, function (data) {
+                $("#translation-output").text(data);
+            });
+        });
+    });
+</script>

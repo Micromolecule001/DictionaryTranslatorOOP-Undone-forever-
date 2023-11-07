@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DictionaryTranslatorOOP.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,11 +18,10 @@ namespace DictionaryTranslatorOOP.Controllers
             _logger = logger;
         }
 
-
-        public User SignUp(string Username, string Email, string Password)
+        public User SignUp(string Username, string Email, string Password, string Role)
         {
             // Коструктурируем юзера
-            User user = new User(Random.Shared.Next(1000000, 9999999), Username, Email, Password);
+            User user = new User(Random.Shared.Next(1000000, 9999999), Username, Email, Password, Role);
 
             _logger.LogInformation("Add new User " + user);
 
