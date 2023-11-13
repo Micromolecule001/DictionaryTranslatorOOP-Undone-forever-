@@ -48,6 +48,7 @@
 <script>
     $(document).ready(function () {
         $("#translate-button").click(function () {
+            alert("called");
             var textToTranslate = $("#translation-input").val();
             $.post("/Controllers/UserController", { text: textToTranslate }, function (data) {
                 $("#translation-output").text(data);

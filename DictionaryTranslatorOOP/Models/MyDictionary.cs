@@ -7,7 +7,6 @@ namespace DictionaryTranslatorOOP
     public class MyDictionary
     {
         private Dictionary<string, string> _dictionary;
-        // Додайте інші властивості користувача, які вам потрібні
 
         // Contructor 
         public MyDictionary()
