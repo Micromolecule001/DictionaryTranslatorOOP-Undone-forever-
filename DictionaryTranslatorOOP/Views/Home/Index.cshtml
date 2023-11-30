@@ -38,17 +38,39 @@
 </head>
 
 <body>
-    <h1>Слоник-перекладач</h1>
+    <h1>Слоник-перекладач 111 </h1>
     <input type="text" id="translation-input" placeholder="Введіть слово для перекладу">
     <button id="translate-button">Перекласти</button>
     <div id="translation-output"></div>
+
+    <h2>
+        Результати запиту
+    </h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
         $("#translate-button").click(function () {
-            alert("called");
+            alert("calleds");
             var textToTranslate = $("#translation-input").val();
             $.post("/Controllers/UserController", { text: textToTranslate }, function (data) {
                 $("#translation-output").text(data);
